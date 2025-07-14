@@ -8,6 +8,8 @@ services:
     tty: true
     restart: unless-stopped
     image: ollama/ollama:${OLLAMA_TAG-latest}
+    ports:
+      - ${OLLAMA_PORT-11434}:11434
 
   open-webui:
     image: ghcr.io/open-webui/open-webui:${WEBUI_TAG-main}
